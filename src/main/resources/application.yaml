@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: xc5m-bot
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+  datasource:
+    url: jdbc:h2:file:~/h2db/xc5m
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+
+bot:
+  api-key: "0000000000:AAAAAAAAAAAAAAAAAAAAAAAA-AAAAAAAA"
+  xc5m-group-id: -0000000
+  xc5m-channel-id: -0000000
+  xc5m-bot-id: 0000000000
+  votes-threshold: 1
+  allowVoteYourself: true
+  startPrimeTime: 11
+  endPrimeTime: 22
+
+logging:
+  file:
+    path: /root/xc5m/logs
+  logback:
+    rollingpolicy:
+      max-file-size: 1MB
+  level:
+    dev.toliyansky: DEBUG
