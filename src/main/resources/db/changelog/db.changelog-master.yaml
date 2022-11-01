@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: toliyansky
+      changes:
+        - createTable:
+            tableName: TelegramUser
+            columns:
+              - column:
+                  name: uuid
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: userId
+                  type: long
+              - column:
+                  name: nickname
+                  type: text
+              - column:
+                  name: banned
+                  type: boolean
+                  defaultValue: false
+        - createTable:
+            tableName: UserSettings
+            columns:
+              - column:
+                  name: uuid
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: telegramId
+                  type: long
+              - column:
+                  name: showAuthor
+                  type: boolean
+              - column:
+                  name: created
+                  type: datetime
